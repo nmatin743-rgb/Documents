@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="#">Matingly Norvil</a>
+            <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">Menu</button>
+            <nav id="primary-navigation" class="primary-nav" aria-label="Primary">
+                <ul>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+    <section class="hero">
+        <div class="container">
+            <h1>Hi, I'm Matingly Norvil.</h1>
+            <p>I'm a developer who builds accessible, responsive web experiences.</p>
+            <p><a class="btn" href="#projects">View projects</a></p>
+        </div>
+    </section>
+
+    <section id="projects" class="section container">
+        <h2>Selected Projects</h2>
+        <div class="projects-grid">
+            <article class="project">
+                <h3>Project One</h3>
+                <p>Short description of the project and technologies used.</p>
+                <p><a href="#">View →</a></p>
+            </article>
+            <article class="project">
+                <h3>Project Two</h3>
+                <p>Short description of the project and technologies used.</p>
+                <p><a href="#">View →</a></p>
+            </article>
+            <article class="project">
+                <h3>Project Three</h3>
+                <p>Short description of the project and technologies used.</p>
+                <p><a href="#">View →</a></p>
+            </article>
+        </div>
+    </section>
+
+    <section id="about" class="section alt">
+        <div class="container">
+            <h2>About</h2>
+            <p>Write a short bio here — skills, interests, and what you're looking for.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="section container">
+        <h2>Contact</h2>
+        <p>If you'd like to work together, send an email to <a href="mailto:you@example.com">you@example.com</a>.</p>
+    </section>
+    </main>
+
+    <footer class="site-footer">
+    <div class="container">
+        <p>&copy; <span id="year"></span> Matingly Norvil. Built with care.</p>
+    </div>
+    </footer>
+
+    <script>
+    // Small script to handle nav toggle and dynamic year
+    (function(){
+        var navToggle = document.getElementById('nav-toggle');
+        var nav = document.getElementById('primary-navigation');
+        if(navToggle && nav){
+            navToggle.addEventListener('click', function(){
+                var expanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', String(!expanded));
+                nav.classList.toggle('open');
+            });
+        }
+        var yearEl = document.getElementById('year');
+        if(yearEl) yearEl.textContent = new Date().getFullYear();
+    })();
+    </script>
+  </body>
+</html>
